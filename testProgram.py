@@ -2,44 +2,46 @@ import io
 from random import randint
 import random
 from unittest.mock import Mock
-import payCalculator
+import monkeyCalculator
 
-def test_payCalculator_prints_correct_result(capfd, monkeypatch):
-    rate = float(randint(1, 100))
-    hours = randint(1, 40)
-    input = [rate, hours]
+def test_monkeyCalculator_noSmiles_prints_correct_result(capfd, monkeypatch):
+    one = "n"
+    two = "n"
+    input = [one, two]
     monkeypatch.setattr('builtins.input', lambda _:input.pop())
-    payCalculator.calculatePay()
+    monkeyCalculator.calculateTime()
 
     out, err = capfd.readouterr()
-    expected = "Pay: "+str(rate * hours)+"\n"
+    expected = "Uh Oh! We're in trouble!\n"
     assert out == expected
-def test_payCalculator_prints_error_withNonNumericHoursBonus(capfd, monkeypatch):
-    hours = 'njdvnjkfdfdb'
-    input = [10, hours]
+def test_monkeyCalculator_allSmiles_prints_correct_result(capfd, monkeypatch):
+    one = "y"
+    two = "y"
+    input = [one, two]
     monkeypatch.setattr('builtins.input', lambda _:input.pop())
-    payCalculator.calculatePay()
+    monkeyCalculator.calculateTime()
 
     out, err = capfd.readouterr()
-    expected = 'Error, please enter numeric input\n'
+    expected = "Uh Oh! We're in trouble!\n"
     assert out == expected
-def test_payCalculator_prints_error_withNonNumericPayBonus(capfd, monkeypatch):
-    rate = 'bljhkjbbj'
-    hours = randint(1, 100)
-    input = [rate, hours]
+
+def test_monkeyCalculator_firstSmiles_prints_correct_result(capfd, monkeypatch):
+    one = "y"
+    two = "n"
+    input = [one, two]
     monkeypatch.setattr('builtins.input', lambda _:input.pop())
-    payCalculator.calculatePay()
+    monkeyCalculator.calculateTime()
 
     out, err = capfd.readouterr()
-    expected = 'Error, please enter numeric input\n'
+    expected = "Yay! We're going to have a good day!\n"
     assert out == expected
-def test_payCalculator_prints_error_withOver40Hours(capfd, monkeypatch):
-    rate = float(randint(1, 100))
-    hours = randint(41, 100)
-    input = [rate, hours]
+def test_monkeyCalculator_secondSmiles_prints_correct_result(capfd, monkeypatch):
+    one = "n"
+    two = "y"
+    input = [one, two]
     monkeypatch.setattr('builtins.input', lambda _:input.pop())
-    payCalculator.calculatePay()
-    otHours = hours-40
+    monkeyCalculator.calculateTime()
+
     out, err = capfd.readouterr()
-    expected = "Pay: "+str(rate * 40+otHours*1.5*rate)+"\n"
+    expected = "Yay! We're going to have a good day!\n"
     assert out == expected
