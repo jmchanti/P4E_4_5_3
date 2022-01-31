@@ -15,8 +15,7 @@ def test_monkeyCalculator_noSmiles_prints_correct_result(capfd, monkeypatch):
     time_3 = 1
     rate_3 = 1
     input = [principal_1, time_1, rate_1, principal_2, time_2, rate_2, principal_3, time_3, rate_3]
-    stingInput = str(principal_1)+"\n"+str(time_1)+"\n"+str(rate_1)+"\n"+ str(principal_2)+"\n"+ str(time_2)+"\n"+ str(rate_2)+"\n"+ str(principal_3)+"\n"+ str(time_3)+"\n"+ str(rate_3)+"\n"
-    monkeypatch.setattr('sys.stdin', stingInput)
+    monkeypatch.setattr('builtins.input', lambda _:input.pop())
     compoundInterest.calculateCompoundInterest()
 
     out, err = capfd.readouterr()
