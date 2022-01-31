@@ -5,11 +5,11 @@ The purpose of this assignment is to allow you to confirm you have Github Classr
 
 ## Steps for completion
 
-1. Open `monkeyCalculator.py`
-1. Complete the assignment as described in https://canvas.instructure.com/courses/3650963/assignments/25666009?module_item_id=55313408
-3. Note: complete the code inside the calculatePay section.  Each line should be indented between the comments in that file.  For example
+1. Open `compoundInterest.py`
+1. Complete the assignment as described in https://canvas.instructure.com/courses/3650963/assignments/25666010?module_item_id=55313409
+3. Note: complete the code inside the calculateCompoundInterest section.  Each line should be indented between the comments in that file.  For example
 
-calculateTime():
+calculateCompoundInterest():
     all of the
     code you are writing
     should be indented 4 spaces
