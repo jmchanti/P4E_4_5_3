@@ -15,7 +15,7 @@ def test_monkeyCalculator_noSmiles_prints_correct_result(capfd, monkeypatch):
     time_3 = 1
     rate_3 = 1
     input = [principal_1, time_1, rate_1, principal_2, time_2, rate_2, principal_3, time_3, rate_3]
-    monkeypatch.setattr('builtins.input', lambda _:input.pop())
+    monkeypatch.setattr('builtins.input', lambda _:input.pop(0))
     compoundInterest.calculateCompoundInterest()
 
     out, err = capfd.readouterr()
