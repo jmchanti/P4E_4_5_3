@@ -1,19 +1,44 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6637432&assignment_repo_type=AssignmentRepo)
-# Calculate Pay using variables
+# Assignment
+You are a bank account manager, and you have to calculate annual compound interest for 3 clients.
 
-The purpose of this assignment is to allow you to confirm you have Github Classroom set up properly and you're able to submit assignments.
+Write a program that asks each client what the principal amount is, what the time span is (in years), and what the interest rate is. Then print the compound interest for the user.
 
-## Steps for completion
+## Formulas
+`A = P( 1 + R/100)^T`
 
-1. Open `compoundInterest.py`
-1. Complete the assignment as described in https://canvas.instructure.com/courses/3650963/assignments/25666010?module_item_id=55313409
-3. Note: complete the code inside the calculateCompoundInterest section.  Each line should be indented between the comments in that file.  For example
+`CI = A - P`
 
-calculateCompoundInterest():
-    all of the
-    code you are writing
-    should be indented 4 spaces
-    in between the comments in that file
+- A is Amount
+- P is Principal Amount
+- R is Interest Rate
+- T is Time Span in Years
+- CI is Compound Interest
 
-1. When ready to submit, press the sync button in the assignments tab.
-1.  Hint: the desired output needs to be printed as described in the assignment, if it is not, the tests will fail.
+## Starter Code
+```python
+# This first 3 lines are provided for you
+client_one_principal = float(input("Principle (amount): "))
+client_one_time =      float(input("Time:               "))
+client_one_rate =      float(input("Rate:               "))
+```
+
+## Desired Output
+```
+Principle (amount): 1200
+Time:               2
+Rate:               5.4
+Compound Interest:  133.1
+---
+Principle (amount): 12345
+Time:               8
+Rate:               6.7
+Compound Interest:  8394.89
+---
+Principle (amount): 50
+Time:               1
+Rate:               1
+Compound Interest:  0.5
+```
+
+## Testing
+When you think your code if finished, run pytest in the terminal!
