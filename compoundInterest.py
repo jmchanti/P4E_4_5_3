@@ -1,6 +1,6 @@
 def calculateCompoundInterest():
     
-# This first 3 lines are provided for yougetACompoundIntrest()
+# This first 3 lines are provided for yougetACompoundInterest()
 # This first 3 lines are provided for you
  client_one_principal = float(input("Principle (amount): "))
  client_one_time =      float(input("Time:               "))
@@ -9,9 +9,7 @@ def calculateCompoundInterest():
 
     # end assignment
 
-## if you want to test locally before you try to sync
-## uncomment calculateCompoundInterest() and run > python monkeyCalculator.py
-## ***IMPORTANT*** please recomment before you submit/sync your assignment.
-## OR YOUR TEST WILL NOT RUN
+## If you want to test locally run > python compoundInterest.py
 
-#calculateCompoundInterest()
+if __name__ == "__main__":
+    calculateCompoundInterest()
